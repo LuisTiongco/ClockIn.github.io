@@ -43,6 +43,25 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             position: relative;
             z-index: 1;
+            border: 3px solid #ffb3ba;
+        }
+
+        .letter-container::before {
+            content: '❤️';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 40px;
+            opacity: 0.3;
+        }
+
+        .letter-container::after {
+            content: '❤️';
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 40px;
+            opacity: 0.3;
         }
 
         .letter-header {
@@ -52,8 +71,15 @@
 
         .letter-header h1 {
             color: #e74c3c;
-            font-size: 48px;
+            font-size: 60px;
             margin-bottom: 10px;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
         }
 
         .letter-content {
@@ -67,6 +93,18 @@
             margin-bottom: 20px;
         }
 
+        .letter-content p:first-child {
+            font-size: 22px;
+            color: #e74c3c;
+        }
+
+        .letter-content p:nth-child(2) {
+            font-size: 32px;
+            font-weight: bold;
+            color: #c0392b;
+            margin-top: 30px;
+        }
+
         .signature {
             text-align: right;
             margin-top: 40px;
@@ -74,6 +112,16 @@
             color: #e74c3c;
             font-size: 20px;
         }
+
+        .roses {
+            position: absolute;
+            font-size: 50px;
+        }
+
+        .rose1 { top: 5%; left: 5%; }
+        .rose2 { top: 10%; right: 8%; }
+        .rose3 { bottom: 10%; left: 8%; }
+        .rose4 { bottom: 5%; right: 5%; }
     </style>
 </head>
 <body>
@@ -84,15 +132,21 @@
     <div class="heart" style="top: 50%; left: 5%; animation-delay: 1.5s;">💝</div>
     <div class="heart" style="top: 60%; right: 5%; animation-delay: 2.5s;">💘</div>
 
+    <div class="roses rose1">🌹</div>
+    <div class="roses rose2">🌹</div>
+    <div class="roses rose3">🌹</div>
+    <div class="roses rose4">🌹</div>
+
     <div class="letter-container">
         <div class="letter-header">
             <h1>💌</h1>
         </div>
         <div class="letter-content">
-            <p>Your Valentine's message goes here...</p>
+            <p>Dear Vic,</p>
+            <p>Will you be my Valentine?</p>
         </div>
         <div class="signature">
-            <p>With love,</p>
+            <p>With love, Luis</p>
         </div>
     </div>
 </body>

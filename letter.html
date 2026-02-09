@@ -113,6 +113,37 @@
             font-size: 20px;
         }
 
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            font-size: 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        .btn-yes {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .btn-no {
+            background: #95a5a6;
+            color: white;
+        }
+
         .roses {
             position: absolute;
             font-size: 50px;
@@ -141,13 +172,34 @@
         <div class="letter-header">
             <h1>💌</h1>
         </div>
-        <div class="letter-content">
+        <div class="letter-content" id="letterContent">
             <p>Dear Vic,</p>
             <p>Will you be my Valentine?</p>
+        </div>
+        <div class="buttons" id="buttons">
+            <button class="btn btn-yes" onclick="handleYes()">Yes! ❤️</button>
+            <button class="btn btn-no" onclick="handleNo()">No</button>
         </div>
         <div class="signature">
             <p>With love, Luis</p>
         </div>
     </div>
+    
+    <script>
+        function handleNo() {
+            document.getElementById('letterContent').innerHTML = '<p>Really? ;(</p>';
+            document.getElementById('buttons').innerHTML = '<button class="btn btn-no" onclick="goBack()">Are you sure? ;(</button>';
+        }
+        
+        function goBack() {
+            document.getElementById('letterContent').innerHTML = '<p>Dear Vic,</p><p>Will you be my Valentine?</p>';
+            document.getElementById('buttons').innerHTML = '<button class="btn btn-yes" onclick="handleYes()">Yes! ❤️</button><button class="btn btn-no" onclick="handleNo()">No</button>';
+        }
+        
+        function handleYes() {
+            document.getElementById('letterContent').innerHTML = '<p>Yay! Thank you!</p><p>I love you so much!</p>';
+            document.getElementById('buttons').innerHTML = '';
+        }
+    </script>
 </body>
 </html>

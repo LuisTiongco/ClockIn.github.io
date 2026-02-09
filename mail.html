@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock In - Mail</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <span class="logo">⏰</span>
+            <h3>Clock In</h3>
+        </div>
+        <nav class="sidebar-menu">
+            <a href="home.html" class="menu-item">🏠 Home</a>
+            <a href="users.html" class="menu-item">👥 Users</a>
+            <a href="attendance.html" class="menu-item">📋 Attendance</a>
+            <a href="schedule.html" class="menu-item">📅 Schedule</a>
+            <a href="policy.html" class="menu-item">📄 Policy</a>
+            <a href="mail.html" class="menu-item active">📧 Mail</a>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="login.html" class="menu-item logout">🚪 Logout</a>
+        </div>
+    </div>
+    
+    <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <div class="main-content">
+        <nav class="navbar">
+            <div class="nav-content">
+                <h2>Mail</h2>
+            </div>
+        </nav>
+        
+        <div class="container">
+            <div class="mail-list">
+                <div class="mail-item" onclick="openMail('HR Department', 'Reminder: Submit your timesheet', 'Please remember to submit your timesheet by the end of the week. This is important for payroll processing.', '2 hours ago')">
+                    <strong>HR Department</strong>
+                    <p>Reminder: Submit your timesheet</p>
+                    <small>2 hours ago</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="mailModal" class="modal">
+        <div class="envelope" onclick="openLetter()">
+            <span class="close" onclick="event.stopPropagation(); closeModal();">&times;</span>
+            <div class="envelope-body">
+                <div class="envelope-to">To: Vic</div>
+            </div>
+            <div class="envelope-flap"></div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        });
+        
+        function openMail(sender, subject, body, time) {
+            document.getElementById('mailModal').style.display = 'block';
+        }
+        
+        function openLetter() {
+            window.location.href = 'letter.html';
+        }
+        
+        function closeModal() {
+            document.getElementById('mailModal').style.display = 'none';
+        }
+        
+        window.onclick = function(event) {
+            const modal = document.getElementById('mailModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

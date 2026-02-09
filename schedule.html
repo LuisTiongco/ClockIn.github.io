@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock In - Schedule</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <span class="logo">⏰</span>
+            <h3>Clock In</h3>
+        </div>
+        <nav class="sidebar-menu">
+            <a href="home.html" class="menu-item">🏠 Home</a>
+            <a href="users.html" class="menu-item">👥 Users</a>
+            <a href="attendance.html" class="menu-item">📋 Attendance</a>
+            <a href="schedule.html" class="menu-item active">📅 Schedule</a>
+            <a href="policy.html" class="menu-item">📄 Policy</a>
+            <a href="mail.html" class="menu-item">📧 Mail</a>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="login.html" class="menu-item logout">🚪 Logout</a>
+        </div>
+    </div>
+    
+    <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <div class="main-content">
+        <nav class="navbar">
+            <div class="nav-content">
+                <h2>Schedule</h2>
+            </div>
+        </nav>
+        
+        <div class="container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Employee</th>
+                        <th>Day</th>
+                        <th>Shift Start</th>
+                        <th>Shift End</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
